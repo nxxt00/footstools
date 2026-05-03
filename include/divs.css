@@ -1,0 +1,133 @@
+/* CSS Document Goldmann - Footstools*/
+
+/* ---------------------------------
+hauptfenster mittig
+---------------------------------- */ 	
+body {background-color:#EFEFEF;}
+#main{ 
+	position: absolute;
+	width: 1008px;
+	max-height: 100%;
+	z-index: 10;
+	left: 50%;
+	bottom: 10px;
+	top:90px;
+	margin-left: -504px;
+	background-image:url(../grafik/higru-verlauf.jpg);
+	background-repeat:repeat-y;
+	border-top-color:#AEAEAE;
+	border-top-style:solid;
+	border-top-width:0px;
+	border-bottom-color:#EFEFEF;
+	border-bottom-style:solid;
+	border-bottom-width:30px;
+	border-left-color:#DEAC55;
+	border-left-style:solid;
+	border-left-width:1px;
+	border-right-color:#DEAC55;
+	border-right-style:solid;
+	border-right-width:1px;
+	}
+
+#logo{
+	position:absolute;
+	width:1010px;
+	height: 78px;
+	left: -1px;
+	top: -78px;
+	z-index:20;
+	}
+#footer{
+	position:absolute;
+	width:1010px;
+	height: 34px;
+	left: -1px;
+	bottom: -29px;
+	z-index:20;
+	}
+	
+#verlauf{
+	position:absolute;
+	width:1008px;
+	height: 24px;
+	left: 0px;
+	top: 0px;
+	z-index:20;
+	}
+	
+#topmenu{
+	position:absolute;
+	max-width:1008px;
+	height: 24px;
+	right: 16px;
+	top: 3px;
+	z-index:20;
+	}
+	
+#topmenu a{margin-left:20px;}
+	
+#bildmenu{
+	position:absolute;
+	max-width:98px;
+	height:340px;
+	left: 20px;
+	top: 45px;
+	z-index:20;
+	}
+	
+#bottommenu{
+	position:absolute;
+	width:200px;
+	height:30px;
+	right: 160px;
+	bottom: -31px;
+	z-index:30;
+	}
+	
+#impressum{
+	position:absolute;
+	width:200px;
+	height:30px;
+	left: 20px;
+	bottom: -35px;
+	z-index:30;
+	}
+	
+#mailoben{
+	position:absolute;
+	width:200px;
+	height:23px;
+	right: 167px;
+	top: -36px;
+	z-index:30;
+	}
+#inhaltcenter{
+	position:absolute;
+	width:700px;
+	height:83%;
+	left:180px;
+	top: 70px;
+	z-index:50;
+	overflow:auto;
+	text-align:center;
+	}
+#inhaltleft{
+	position:absolute;
+	width:800px;
+	height:83%;
+	left:180px;
+	top: 70px;
+	z-index:50;
+	overflow:auto;		
+	text-align:left;
+	}
+#preistabelle{
+	position:absolute;
+	right: 54px;
+	top: 70px;
+	z-index:40;
+	background-color:#E1EBE3;
+	}
+	
+
+	

@@ -1,0 +1,348 @@
+/* CSS Document Goldmann - Footstools*/
+
+body	{
+	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 12px;
+	font-weight : normal;
+	line-height:140%;
+	color :  #515151;
+	}
+
+span.bottommenu                               
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 12px;
+	font-weight : normal;
+	color : #CF8E27;
+	line-height:100%;
+	}
+span.weiss                               
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color :#EDE1CC;
+	line-height:100%;
+	}
+span.headline                              
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 16px;
+	font-weight : bold;
+	color : #AE8847;
+	line-height:120%;
+	}
+span.grossgoldfett                             
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color : #AE8847;
+	line-height:120%;
+	}
+span.grossgraufett                           
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color : #515151;
+	line-height:120%;
+	}
+span.grossgold                            
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : normal;
+	color : #AE8847;
+	line-height:120%;
+	}
+span.grossgrau                          
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : normal;
+	color : #515151;
+	line-height:120%;
+	}
+td.kleinkursiv{
+	font-family: verdana, sans-serif;
+	font-style: italic;
+	font-size : 11px;
+	font-weight : normal;
+	line-height:140%;
+	color : #AE8847;
+	}
+table.preise{
+	border-width:1px;
+	border-style:solid;
+	border-color:#CB7D00;
+	}
+	
+a:link                               
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 12px;
+	font-weight : normal;
+	color : #515151;
+	line-height:140%;
+	text-decoration:underline;
+	}
+		 	 
+a:visited
+	{
+	 font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 12px;
+	font-weight : normal;
+	color : #515151;
+	line-height:140%;    
+	text-decoration:underline;
+    } 
+	 	 
+a:active
+	{   	
+ 	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 12px;
+	font-weight : normal;
+	color :  #515151;
+	line-height:140%;
+	text-decoration:underline;
+  	} 
+	
+a:hover
+	{
+ 	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 12px;
+	font-weight : normal;
+	color : #AE8847;
+	line-height:140%;  
+	text-decoration:underline;
+  	}
+	
+a:link.topmenu                               
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 12px;
+	font-weight : normal;
+	color : #5A5A5A;
+	line-height:100%;
+	text-decoration:none;
+	}
+		 	 
+a:visited.topmenu 
+	{
+	 font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 12px;
+	font-weight : normal;
+	color : #5A5A5A;
+	line-height:100%;  
+	text-decoration:none;
+    } 
+	 	 
+a:active.topmenu 
+	{   	
+ 	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 12px;
+	font-weight : normal;
+	color :  #5A5A5A;
+	line-height:100%;
+	text-decoration:none;
+  	} 
+	
+a:hover.topmenu 
+	{
+ 	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 12px;
+	font-weight : normal;
+	color : #ffffff;
+	line-height:100%;  
+	text-decoration:none;
+  	}
+a:link.bildmenu                               
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 13px;
+	font-weight : normal;
+	color : #A68140;
+	line-height:110%;
+	text-decoration:none;
+	}
+		 	 
+a:visited.bildmenu 
+	{
+	 font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 13px;
+	font-weight : normal;
+	color : #A68140;
+	line-height:110%;  
+	text-decoration:none;
+    } 
+	 	 
+a:active.bildmenu 
+	{   	
+ 	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 13px;
+	font-weight : normal;
+	color :  #A68140;
+	line-height:110%;
+	text-decoration:none;
+  	} 
+	
+a:hover.bildmenu 
+	{
+ 	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 13px;
+	font-weight : normal;
+	color : #A2332C;
+	line-height:110%;  
+	text-decoration:none;
+  	}	
+	
+a:link.bottommenu                               
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color : #EDE1CC;
+	line-height:100%;
+	text-decoration:none;
+	}
+		 	 
+a:visited.bottommenu  
+	{
+	 font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight :  bold;
+	color : #EDE1CC;
+	line-height:100%;  
+	text-decoration:none;
+    } 
+	 	 
+a:active.bottommenu  
+	{   	
+ 	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight :  bold;
+	color :  #EDE1CC;
+	line-height:100%;
+	text-decoration:none;
+  	} 
+	
+a:hover.bottommenu  
+	{
+ 	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color : #C89F58;
+	line-height:100%;  
+	text-decoration:none;
+  	}
+a:link.headline                               
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color : #797979;
+	line-height:120%;
+	text-decoration:none;
+	}
+		 	 
+a:visited.headline
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color : #797979;
+	line-height:120%;
+	text-decoration:none;
+    } 
+	 	 
+a:active.headline 
+	{   	
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color : #797979;
+	line-height:120%;
+	text-decoration:none;
+  	} 
+	
+a:hover.headline 
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color : #CB7D00;
+	line-height:120%; 
+	text-decoration:none;
+  	}	
+a:link.grossgold                              
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color : #AE8847;
+	line-height:120%;
+	text-decoration:underline;
+	}
+		 	 
+a:visited.grossgold
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color : #AE8847;
+	line-height:120%;
+	text-decoration:underline;
+    } 
+	 	 
+a:active.grossgold 
+	{   	
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color :#AE8847;
+	line-height:120%;
+	text-decoration:underline;
+  	} 
+	
+a:hover.grossgold 
+	{
+   	font-family: verdana, sans-serif;
+	font-style: normal;
+	font-size : 14px;
+	font-weight : bold;
+	color : #CB7D00;
+	line-height:120%; 
+	text-decoration:underline;
+  	}	
