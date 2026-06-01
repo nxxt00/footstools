@@ -1,0 +1,8 @@
+.git
+.opcache
+clickandbuilds
+logs
+tools
+_notes
+*.lnk
+WS_FTP.LOG
