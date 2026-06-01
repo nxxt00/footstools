@@ -288,6 +288,26 @@ body {
 	background-color:#E1EBE3;
 	}
 
+#preistabelle .preise {
+	border-collapse:collapse;
+	background-color:#E1EBE3;
+	color:var(--goldmann-text);
+	}
+
+#preistabelle .preise td {
+	padding:5px 8px;
+	line-height:1.35;
+	}
+
+#preistabelle .preise td:last-child {
+	text-align:right;
+	white-space:nowrap;
+	}
+
+#preistabelle .preise td[colspan] {
+	text-align:left;
+	}
+
 .selection-grid {
 	display:grid;
 	grid-template-columns:repeat(auto-fit, minmax(110px, 1fr));
@@ -411,7 +431,7 @@ body {
 
 @media (max-width: 760px) {
 	body {
-		background:#F6F4EF;
+		background-color:#EFEFEF;
 		}
 
 	#main {
@@ -426,7 +446,8 @@ body {
 		bottom:auto;
 		margin:0;
 		padding:0 16px 32px;
-		background:var(--goldmann-paper);
+		background-image:url(../grafik/higru-verlauf.jpg);
+		background-repeat:repeat-y;
 		border:0;
 		}
 
@@ -504,6 +525,17 @@ body {
 	#inhalttab img {
 		max-width:100%;
 		height:auto;
+		}
+
+	#foto img,
+	#inhalt img,
+	#inhaltcenter img,
+	#inhaltleft img,
+	#inhaltfootstools img,
+	#inhalttab img {
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
 		}
 
 	#verlauf {
@@ -642,8 +674,30 @@ body {
 
 	#preistabelle {
 		order:4;
-		display:inline-block;
-		margin:12px 0 4px !important;
+		align-self:stretch;
+		display:block;
+		margin:12px 0 10px !important;
+		background:transparent;
+		}
+
+	#preistabelle br {
+		display:none;
+		}
+
+	#preistabelle .preise {
+		width:100%;
+		max-width:360px;
+		margin:0 auto;
+		border-collapse:collapse;
+		box-shadow:0 6px 14px rgba(82, 68, 47, .08);
+		}
+
+	#preistabelle .preise td {
+		padding:7px 9px;
+		}
+
+	#preistabelle .preise td[colspan] {
+		border-bottom:1px solid rgba(203, 125, 0, .28);
 		}
 
 	#bottommenu {
