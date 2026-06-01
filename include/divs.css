@@ -3,7 +3,38 @@
 /* ---------------------------------
 hauptfenster mittig
 ---------------------------------- */ 	
-body {background-color:#EFEFEF;}
+body {
+	background-color:#EFEFEF;
+	margin:0;
+	}
+
+:root {
+	--goldmann-gold:#A68140;
+	--goldmann-gold-dark:#8A6A31;
+	--goldmann-red:#A2332C;
+	--goldmann-text:#515151;
+	--goldmann-paper:#F8F6F1;
+	}
+
+* {
+	box-sizing:border-box;
+	}
+
+.skip-link {
+	position:absolute;
+	left:12px;
+	top:12px;
+	z-index:9999;
+	padding:8px 10px;
+	background:#ffffff;
+	color:var(--goldmann-red);
+	border:1px solid #D9C49D;
+	transform:translateY(-160%);
+	}
+
+.skip-link:focus {
+	transform:translateY(0);
+	}
 #main{ 
 	position: absolute;
 	width: 1008px;
@@ -36,6 +67,16 @@ body {background-color:#EFEFEF;}
 	left: -1px;
 	top: -78px;
 	z-index:20;
+	}
+
+#logo:before {
+	content:"";
+	display:none;
+	}
+
+#logo:after {
+	content:"";
+	display:none;
 	}
 #footer{
 	position:absolute;
@@ -74,6 +115,82 @@ body {background-color:#EFEFEF;}
 	top: 45px;
 	z-index:20;
 	}
+
+#bildmenu .category-menu {
+	display:block;
+	}
+
+#bildmenu .category-link {
+	display:block;
+	margin-bottom:14px;
+	text-align:center;
+	}
+
+#bildmenu .category-link img {
+	display:block;
+	margin:0 auto 4px;
+	}
+
+#topmenu a[aria-current="page"],
+#bildmenu a[aria-current="page"],
+#impressum a[aria-current="page"] {
+	color:var(--goldmann-red);
+	}
+
+#bildmenu a[aria-current="page"] img {
+	outline:2px solid #D9C49D;
+	outline-offset:2px;
+	}
+
+.startpage{
+	max-width:620px;
+	margin:0 auto;
+	padding-bottom:32px;
+	}
+
+.startpage h1{
+	margin:0 0 12px;
+	font-family:"Lucida Calligraphy", "Brush Script MT", cursive;
+	font-size:32px;
+	font-weight:normal;
+	line-height:1.2;
+	color:var(--goldmann-gold-dark);
+	}
+
+.startpage-subtitle{
+	margin:0 0 24px;
+	font-family:"Lucida Calligraphy", "Brush Script MT", cursive;
+	font-size:19px;
+	line-height:1.5;
+	color:#595651;
+	}
+
+.startpage-image{
+	display:block;
+	width:100%;
+	max-width:550px;
+	height:auto;
+	margin:0 auto;
+	border-radius:4px;
+	box-shadow:0 14px 32px rgba(82, 68, 47, .18);
+	}
+
+.startpage-inspiration{
+	margin:24px 0 8px;
+	font-size:15px;
+	}
+
+.startpage-inspiration a{
+	font-size:21px;
+	color:var(--goldmann-red);
+	text-decoration:none;
+	border-bottom:1px solid var(--goldmann-red);
+	}
+
+.startpage-signature{
+	margin:0;
+	color:#6B6258;
+	}
 	
 #bottommenu{
 	position:absolute;
@@ -101,6 +218,24 @@ body {background-color:#EFEFEF;}
 	top: -36px;
 	z-index:30;
 	}
+
+#foto {
+	position:absolute;
+	left:510px;
+	top:280px;
+	z-index:100;
+	}
+
+#inhalt{
+	position:absolute;
+	width:700px;
+	left:180px;
+	top:50px;
+	z-index:50;
+	overflow-y:auto;
+	overflow-x:hidden;
+	text-align:center;
+	}
 #inhaltcenter{
 	position:absolute;
 	width:700px;
@@ -121,6 +256,30 @@ body {background-color:#EFEFEF;}
 	overflow:auto;		
 	text-align:left;
 	}
+#inhaltleft img,
+#inhalttab img{
+	margin-right:10px;
+	}
+#inhaltfootstools{
+	position:absolute;
+	width:550px;
+	left:180px;
+	top:70px;
+	z-index:50;
+	overflow-y:auto;
+	overflow-x:hidden;
+	text-align:left;
+	}
+#inhalttab{
+	position:absolute;
+	width:800px;
+	left:180px;
+	top:70px;
+	z-index:50;
+	overflow-y:auto;
+	overflow-x:hidden;
+	text-align:left;
+	}
 #preistabelle{
 	position:absolute;
 	right: 54px;
@@ -128,6 +287,394 @@ body {background-color:#EFEFEF;}
 	z-index:40;
 	background-color:#E1EBE3;
 	}
+
+.selection-grid {
+	display:grid;
+	grid-template-columns:repeat(auto-fit, minmax(110px, 1fr));
+	gap:14px 18px;
+	max-width:760px;
+	margin:0 0 24px;
+	}
+
+.selection-grid a {
+	display:block;
+	text-align:center;
+	text-decoration:none;
+	color:#A68140;
+	line-height:120%;
+	}
+
+.selection-grid img {
+	display:block;
+	width:100%;
+	max-width:110px;
+	height:auto;
+	margin:0 auto 7px;
+	border-radius:4px;
+	}
+
+.selection-grid-large {
+	grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+	gap:22px 24px;
+	max-width:780px;
+	}
+
+.selection-grid-large img {
+	max-width:330px;
+	box-shadow:0 8px 18px rgba(82, 68, 47, .12);
+	}
+
+.detail-page > img,
+.detail-page > a > img {
+	display:block;
+	max-width:100%;
+	height:auto;
+	border-radius:4px;
+	box-shadow:0 10px 22px rgba(82, 68, 47, .14);
+	}
+
+.gallery-page {
+	line-height:150%;
+	}
+
+.gallery-intro {
+	max-width:660px;
+	margin:8px 0 24px;
+	}
+
+.gallery-list {
+	display:block;
+	width:100%;
+	border-collapse:separate;
+	}
+
+.gallery-list tbody {
+	display:block;
+	}
+
+.gallery-list tr {
+	display:grid;
+	grid-template-columns:minmax(250px, 375px) minmax(190px, 1fr);
+	gap:20px;
+	align-items:start;
+	margin:0 0 28px;
+	padding:0 0 24px;
+	border-bottom:1px solid #DDCBAA;
+	}
+
+.gallery-list tr:has(td[colspan]),
+.gallery-list tr:not(:has(td:nth-child(2))) {
+	display:none;
+	}
+
+.gallery-list td {
+	display:block;
+	padding:0;
+	vertical-align:top;
+	}
+
+.gallery-list td:first-child {
+	text-align:left !important;
+	}
+
+.gallery-list td:first-child img {
+	display:block;
+	width:100%;
+	max-width:375px;
+	height:auto;
+	margin:0;
+	border-radius:4px;
+	box-shadow:0 10px 22px rgba(82, 68, 47, .14);
+	}
+
+.gallery-list td:nth-child(2) {
+	padding-top:2px;
+	color:var(--goldmann-text);
+	}
+
+.gallery-list td:nth-child(2) b i {
+	font-size:14px;
+	color:var(--goldmann-gold-dark);
+	}
+
+.gallery-list td:nth-child(2) > span {
+	color:var(--goldmann-gold-dark);
+	font-size:14px !important;
+	}
+
+.gallery-list td:nth-child(2) a {
+	display:inline-block;
+	margin-top:3px;
+	color:var(--goldmann-red);
+	}
 	
+
+@media (max-width: 760px) {
+	body {
+		background:#F6F4EF;
+		}
+
+	#main {
+		position:relative;
+		display:flex;
+		flex-direction:column;
+		width:auto;
+		min-height:100vh;
+		max-height:none;
+		left:auto;
+		top:auto;
+		bottom:auto;
+		margin:0;
+		padding:0 16px 32px;
+		background:var(--goldmann-paper);
+		border:0;
+		}
+
+	#logo,
+	#verlauf,
+	#footer,
+	#topmenu,
+	#bildmenu,
+	#bottommenu,
+	#impressum,
+	#mailoben,
+	#foto,
+	#preistabelle,
+	#inhalt,
+	#inhaltcenter,
+	#inhaltleft,
+	#inhaltfootstools,
+	#inhalttab {
+		position:static !important;
+		width:auto !important;
+		max-width:100% !important;
+		height:auto !important;
+		max-height:none !important;
+		margin:0 !important;
+		overflow:visible !important;
+		}
+
+	#logo {
+		order:1;
+		position:relative !important;
+		top:auto !important;
+		right:auto !important;
+		bottom:auto !important;
+		left:auto !important;
+		min-height:64px;
+		margin:0 -16px !important;
+		padding:12px 16px 10px;
+		background:#B1AEAA;
+		}
+
+	#logo img {
+		display:none;
+		}
+
+	#logo:before {
+		content:"Goldmann";
+		display:inline;
+		font-family:"Lucida Calligraphy", "Brush Script MT", cursive;
+		font-size:28px;
+		line-height:1;
+		color:#D7A342;
+		text-shadow:0 1px 1px rgba(255,255,255,.55);
+		}
+
+	#logo:after {
+		content:"Footstools";
+		display:inline;
+		margin-left:10px;
+		font-family:Georgia, "Times New Roman", serif;
+		font-style:italic;
+		font-size:26px;
+		line-height:1;
+		color:#F2EFE9;
+		text-shadow:0 1px 2px rgba(0,0,0,.22);
+		}
+
+	#logo img,
+	#verlauf img,
+	#footer img,
+	#foto img,
+	#inhalt img,
+	#inhaltcenter img,
+	#inhaltleft img,
+	#inhaltfootstools img,
+	#inhalttab img {
+		max-width:100%;
+		height:auto;
+		}
+
+	#verlauf {
+		display:none;
+		}
+
+	#topmenu {
+		order:2;
+		display:flex;
+		flex-wrap:wrap;
+		gap:8px 14px;
+		justify-content:center;
+		padding:14px 0 18px;
+		border-bottom:1px solid #D9C49D;
+		}
+
+	#topmenu a {
+		margin-left:0;
+		padding:4px 0;
+		}
+
+	#bildmenu {
+		order:3;
+		padding:18px 0 4px;
+		text-align:center;
+		}
+
+	#bildmenu .category-menu {
+		display:flex;
+		flex-wrap:wrap;
+		gap:14px 18px;
+		justify-content:center;
+		}
+
+	#bildmenu .category-link {
+		width:110px;
+		margin-bottom:0;
+		}
+
+	#bildmenu table {
+		margin:0 auto;
+		}
+
+	#bildmenu img {
+		border-radius:4px;
+		}
+
+	#inhalt,
+	#inhaltcenter,
+	#inhaltleft,
+	#inhaltfootstools,
+	#inhalttab {
+		order:4;
+		padding:18px 0 28px;
+		text-align:left;
+		}
+
+	#inhaltleft table,
+	#inhalttab table,
+	#inhaltcenter table {
+		max-width:100%;
+		}
+
+	#inhaltleft > table,
+	#inhalttab > table,
+	#inhaltcenter > table {
+		display:block;
+		overflow-x:auto;
+		}
+
+	.gallery-page > .gallery-list {
+		overflow:visible;
+		}
+
+	#inhalt,
+	#inhaltcenter {
+		text-align:center;
+		}
+
+	.selection-grid {
+		grid-template-columns:repeat(2, minmax(120px, 1fr));
+		gap:16px;
+		max-width:360px;
+		margin:0 auto 24px;
+		}
+
+	.selection-grid-large {
+		grid-template-columns:1fr;
+		max-width:360px;
+		}
+
+	.selection-grid-large img {
+		max-width:100%;
+		}
+
+	.detail-page > img,
+	.detail-page > a > img {
+		margin:0 auto;
+		}
+
+	.gallery-intro {
+		margin-bottom:22px;
+		}
+
+	.gallery-list tr {
+		grid-template-columns:1fr;
+		gap:10px;
+		margin-bottom:26px;
+		padding-bottom:24px;
+		}
+
+	.gallery-list td:first-child {
+		text-align:center !important;
+		}
+
+	.gallery-list td:first-child img {
+		max-width:100%;
+		margin:0 auto;
+		}
+
+	.gallery-list td:nth-child(2) {
+		padding-top:0;
+		}
+
+	.startpage{
+		padding-bottom:18px;
+		}
+
+	.startpage h1{
+		font-size:28px;
+		}
+
+	.startpage-subtitle{
+		font-size:17px;
+		}
+
+	#preistabelle {
+		order:4;
+		display:inline-block;
+		margin:12px 0 4px !important;
+		}
+
+	#bottommenu {
+		order:5;
+		}
+
+	#impressum {
+		order:6;
+		}
+
+	#mailoben {
+		display:none !important;
+		}
+
+	#foto {
+		order:8;
+		margin:20px auto 0 !important;
+		text-align:center;
+		}
+
+	#bottommenu,
+	#impressum,
+	#mailoben,
+	#footer {
+		text-align:center;
+		}
+
+	#footer {
+		order:7;
+		margin:16px -16px -32px !important;
+		}
+}
 
 	
