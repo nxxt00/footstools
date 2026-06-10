@@ -54,9 +54,42 @@
     document.body.insertBefore(link, document.body.firstChild);
   }
 
+  function integrateDetailPriceTable() {
+    var price = document.querySelector("#preistabelle");
+    var detail = document.querySelector(".detail-page") || document.querySelector("#inhaltleft");
+
+    if (!price || !detail) {
+      return;
+    }
+
+    var table = price.querySelector(".preise");
+    if (!table) {
+      return;
+    }
+
+    if ((" " + detail.className + " ").indexOf(" detail-page ") === -1) {
+      detail.className += detail.className ? " detail-page" : "detail-page";
+    }
+
+    if (price.parentNode === detail) {
+      return;
+    }
+
+    price.className += price.className ? " detail-price" : "detail-price";
+
+    var firstImage = detail.querySelector("img");
+    var target = firstImage;
+    if (firstImage && firstImage.parentNode && firstImage.parentNode.tagName.toLowerCase() === "a" && firstImage.parentNode.parentNode === detail) {
+      target = firstImage.parentNode;
+    }
+
+    detail.insertBefore(price, target || detail.firstChild);
+  }
+
   function init() {
     document.documentElement.className += " js";
     markCurrentLinks();
+    integrateDetailPriceTable();
     addSkipLink();
   }
 

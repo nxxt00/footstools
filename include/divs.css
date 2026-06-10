@@ -299,6 +299,11 @@ body {
 	line-height:1.35;
 	}
 
+#preistabelle .preise td:first-child:not([colspan]) {
+	color:var(--goldmann-gold-dark);
+	font-weight:bold;
+	}
+
 #preistabelle .preise td:last-child {
 	text-align:right;
 	white-space:nowrap;
@@ -306,6 +311,35 @@ body {
 
 #preistabelle .preise td[colspan] {
 	text-align:left;
+	}
+
+#preistabelle .preise td[colspan]::before {
+	content:"Ma\00DF e";
+	display:inline-block;
+	min-width:54px;
+	margin-right:8px;
+	color:var(--goldmann-gold-dark);
+	font-weight:bold;
+	}
+
+.detail-page > #preistabelle {
+	position:static !important;
+	float:right;
+	width:auto !important;
+	max-width:260px !important;
+	margin:0 0 18px 24px !important;
+	background:transparent;
+	z-index:auto;
+	}
+
+.detail-page > #preistabelle br {
+	display:none;
+	}
+
+.detail-page > #preistabelle .preise {
+	width:auto;
+	max-width:100%;
+	box-shadow:0 6px 14px rgba(82, 68, 47, .08);
 	}
 
 .selection-grid {
@@ -765,6 +799,23 @@ body {
 
 	#preistabelle .preise td[colspan] {
 		border-bottom:1px solid rgba(203, 125, 0, .28);
+		}
+
+	.detail-page > #preistabelle {
+		float:none;
+		width:100% !important;
+		max-width:none !important;
+		margin:0 0 18px !important;
+		}
+
+	.detail-page > #preistabelle .preise {
+		width:100%;
+		max-width:none;
+		}
+
+	.detail-page > #preistabelle + img,
+	.detail-page > #preistabelle + a {
+		margin-top:8px;
 		}
 
 	#bottommenu {
