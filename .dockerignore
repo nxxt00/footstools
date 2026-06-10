@@ -4,5 +4,12 @@ clickandbuilds
 logs
 tools
 _notes
+Seiten
+shop
+pictures
 *.lnk
 WS_FTP.LOG
+*backup*.html
+back_up_*.html
+*_bu.html
+*-old.html

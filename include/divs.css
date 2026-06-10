@@ -324,7 +324,7 @@ body {
 
 .detail-page > #preistabelle {
 	position:static !important;
-	float:right;
+	float:none;
 	width:auto !important;
 	max-width:260px !important;
 	margin:0 0 18px 24px !important;
@@ -340,6 +340,52 @@ body {
 	width:auto;
 	max-width:100%;
 	box-shadow:0 6px 14px rgba(82, 68, 47, .08);
+	}
+
+@media (min-width: 761px) {
+	#inhaltleft.detail-page {
+		width:820px;
+		}
+
+	.detail-page {
+		display:grid;
+		grid-template-columns:minmax(0, 1fr) minmax(170px, 200px);
+		column-gap:22px;
+		row-gap:12px;
+		align-items:start;
+		}
+
+	.detail-page > .headline {
+		grid-column:1 / -1;
+		}
+
+	.detail-page > #preistabelle {
+		grid-column:2;
+		grid-row:2;
+		justify-self:stretch;
+		width:100% !important;
+		max-width:none !important;
+		margin:0 !important;
+		}
+
+	.detail-page > #preistabelle .preise {
+		width:100%;
+		}
+
+	.detail-page > img,
+	.detail-page > a {
+		grid-column:1;
+		justify-self:start;
+		}
+
+	.detail-page > img,
+	.detail-page > a > img {
+		margin:0 0 16px;
+		}
+
+	.detail-page > br {
+		display:none;
+		}
 	}
 
 .selection-grid {
