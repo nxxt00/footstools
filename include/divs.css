@@ -14,6 +14,14 @@ body {
 	--goldmann-red:#A2332C;
 	--goldmann-text:#515151;
 	--goldmann-paper:#F8F6F1;
+	--site-max-width:1008px;
+	--site-frame-gutter:12px;
+	--site-width:min(var(--site-max-width), calc(100vw - (var(--site-frame-gutter) * 2)));
+	--site-header-height:clamp(60px, 7.72vw, 78px);
+	--site-sidebar-left:clamp(14px, 1.95vw, 20px);
+	--site-sidebar-width:clamp(88px, 9.72vw, 98px);
+	--site-content-left:clamp(138px, 17.85vw, 180px);
+	--site-content-gutter:clamp(18px, 2.78vw, 28px);
 	}
 
 * {
@@ -37,15 +45,17 @@ body {
 	}
 #main{ 
 	position: absolute;
-	width: 1008px;
+	width: var(--site-width);
 	max-height: 100%;
 	z-index: 10;
 	left: 50%;
 	bottom: 10px;
-	top:90px;
-	margin-left: -504px;
+	top:calc(var(--site-header-height) + 12px);
+	margin-left:0;
+	transform:translateX(-50%);
 	background-image:url(../grafik/higru-verlauf.jpg);
 	background-repeat:repeat-y;
+	background-size:100% auto;
 	border-top-color:#AEAEAE;
 	border-top-style:solid;
 	border-top-width:0px;
@@ -62,11 +72,19 @@ body {
 
 #logo{
 	position:absolute;
-	width:1010px;
-	height: 78px;
+	width:calc(100% + 2px);
+	height:var(--site-header-height);
 	left: -1px;
-	top: -78px;
+	top:calc(var(--site-header-height) * -1);
 	z-index:20;
+	}
+
+#logo img,
+#footer img,
+#verlauf img {
+	display:block;
+	width:100%;
+	height:100%;
 	}
 
 #logo:before {
@@ -80,7 +98,7 @@ body {
 	}
 #footer{
 	position:absolute;
-	width:1010px;
+	width:calc(100% + 2px);
 	height: 34px;
 	left: -1px;
 	bottom: -29px;
@@ -89,7 +107,7 @@ body {
 	
 #verlauf{
 	position:absolute;
-	width:1008px;
+	width:100%;
 	height: 24px;
 	left: 0px;
 	top: 0px;
@@ -98,20 +116,25 @@ body {
 	
 #topmenu{
 	position:absolute;
-	max-width:1008px;
-	height: 24px;
+	display:flex;
+	flex-wrap:wrap;
+	gap:0 clamp(10px, 1.95vw, 20px);
+	justify-content:flex-end;
+	max-width:calc(100% - var(--site-content-left));
+	min-height:24px;
 	right: 16px;
 	top: 3px;
 	z-index:20;
 	}
 	
-#topmenu a{margin-left:20px;}
+#topmenu a{margin-left:0;}
 	
 #bildmenu{
 	position:absolute;
-	max-width:98px;
+	width:var(--site-sidebar-width);
+	max-width:none;
 	height:340px;
-	left: 20px;
+	left:var(--site-sidebar-left);
 	top: 45px;
 	z-index:20;
 	}
@@ -128,6 +151,8 @@ body {
 
 #bildmenu .category-link img {
 	display:block;
+	width:100%;
+	height:auto;
 	margin:0 auto 4px;
 	}
 
@@ -194,9 +219,9 @@ body {
 	
 #bottommenu{
 	position:absolute;
-	width:200px;
+	width:clamp(140px, 15.48vw, 156px);
 	height:30px;
-	right: 160px;
+	right:clamp(28px, 15.87vw, 160px);
 	bottom: -31px;
 	z-index:30;
 	}
@@ -205,18 +230,25 @@ body {
 	position:absolute;
 	width:200px;
 	height:30px;
-	left: 20px;
+	left:var(--site-sidebar-left);
 	bottom: -35px;
 	z-index:30;
 	}
 	
 #mailoben{
 	position:absolute;
-	width:200px;
+	width:clamp(140px, 16.44vw, 166px);
 	height:23px;
-	right: 167px;
-	top: -36px;
+	right:clamp(28px, 16.56vw, 167px);
+	top:calc(var(--site-header-height) * -.46);
 	z-index:30;
+	}
+
+#mailoben img,
+#bottommenu img {
+	display:block;
+	width:100%;
+	height:auto;
 	}
 
 #foto {
@@ -228,8 +260,9 @@ body {
 
 #inhalt{
 	position:absolute;
-	width:700px;
-	left:180px;
+	width:auto;
+	left:var(--site-content-left);
+	right:var(--site-content-gutter);
 	top:50px;
 	z-index:50;
 	overflow-y:auto;
@@ -238,9 +271,10 @@ body {
 	}
 #inhaltcenter{
 	position:absolute;
-	width:700px;
+	width:auto;
 	height:83%;
-	left:180px;
+	left:var(--site-content-left);
+	right:var(--site-content-gutter);
 	top: 70px;
 	z-index:50;
 	overflow:auto;
@@ -248,9 +282,10 @@ body {
 	}
 #inhaltleft{
 	position:absolute;
-	width:800px;
+	width:auto;
 	height:83%;
-	left:180px;
+	left:var(--site-content-left);
+	right:var(--site-content-gutter);
 	top: 70px;
 	z-index:50;
 	overflow:auto;		
@@ -262,8 +297,10 @@ body {
 	}
 #inhaltfootstools{
 	position:absolute;
-	width:550px;
-	left:180px;
+	width:auto;
+	max-width:550px;
+	left:var(--site-content-left);
+	right:var(--site-content-gutter);
 	top:70px;
 	z-index:50;
 	overflow-y:auto;
@@ -272,8 +309,9 @@ body {
 	}
 #inhalttab{
 	position:absolute;
-	width:800px;
-	left:180px;
+	width:auto;
+	left:var(--site-content-left);
+	right:var(--site-content-gutter);
 	top:70px;
 	z-index:50;
 	overflow-y:auto;
@@ -741,6 +779,7 @@ body {
 		top:auto;
 		bottom:auto;
 		margin:0;
+		transform:none;
 		padding:0 16px 32px;
 		background-image:url(../grafik/higru-verlauf.jpg);
 		background-repeat:repeat-y;
