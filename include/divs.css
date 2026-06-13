@@ -311,6 +311,7 @@ body {
 
 #preistabelle .preise td[colspan] {
 	text-align:left;
+	white-space:normal;
 	}
 
 #preistabelle .preise td[colspan]::before {
@@ -325,6 +326,7 @@ body {
 .detail-page > #preistabelle {
 	position:static !important;
 	float:none;
+	min-width:0;
 	width:auto !important;
 	max-width:260px !important;
 	margin:0 0 18px 24px !important;
@@ -339,18 +341,19 @@ body {
 .detail-page > #preistabelle .preise {
 	width:auto;
 	max-width:100%;
+	table-layout:fixed;
 	box-shadow:0 6px 14px rgba(82, 68, 47, .08);
 	}
 
 @media (min-width: 761px) {
 	#inhaltleft.detail-page {
-		width:800px;
-		overflow-x:hidden;
+		width:820px;
+		overflow-x:visible;
 		}
 
 	.detail-page {
 		display:grid;
-		grid-template-columns:minmax(0, 1fr) minmax(180px, 210px);
+		grid-template-columns:minmax(0, 560px) 244px;
 		column-gap:16px;
 		row-gap:12px;
 		align-items:start;
@@ -371,6 +374,7 @@ body {
 
 	.detail-page > #preistabelle .preise {
 		width:100%;
+		table-layout:fixed;
 		}
 
 	.detail-page > img,
