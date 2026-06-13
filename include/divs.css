@@ -4,7 +4,7 @@
 hauptfenster mittig
 ---------------------------------- */ 	
 body {
-	background-color:#EFEFEF;
+	background-color:#F3EFE6;
 	margin:0;
 	}
 
@@ -14,6 +14,9 @@ body {
 	--goldmann-red:#A2332C;
 	--goldmann-text:#515151;
 	--goldmann-paper:#F8F6F1;
+	--site-background:#F1E9D8;
+	--site-background-soft:#F8F5EC;
+	--site-background-muted:#E9DECA;
 	--site-max-width:1008px;
 	--site-frame-gutter:12px;
 	--site-width:min(var(--site-max-width), calc(100vw - (var(--site-frame-gutter) * 2)));
@@ -53,9 +56,7 @@ body {
 	top:calc(var(--site-header-height) + 12px);
 	margin-left:0;
 	transform:translateX(-50%);
-	background-image:url(../grafik/higru-verlauf.jpg);
-	background-repeat:repeat-y;
-	background-size:100% auto;
+	background:var(--site-background);
 	border-top-color:#AEAEAE;
 	border-top-style:solid;
 	border-top-width:0px;
@@ -835,7 +836,7 @@ body {
 
 @media (max-width: 760px) {
 	body {
-		background-color:#EFEFEF;
+		background-color:#F3EFE6;
 		}
 
 	#main {
@@ -850,9 +851,8 @@ body {
 		bottom:auto;
 		margin:0;
 		transform:none;
-		padding:0 16px 32px;
-		background-image:url(../grafik/higru-verlauf.jpg);
-		background-repeat:repeat-y;
+		padding:0 clamp(12px, 4vw, 18px) 32px;
+		background:var(--site-background);
 		border:0;
 		}
 
@@ -887,39 +887,34 @@ body {
 		right:auto !important;
 		bottom:auto !important;
 		left:auto !important;
-		min-height:64px;
-		margin:0 -16px !important;
-		padding:12px 16px 10px;
-		background:#B1AEAA;
+		height:clamp(58px, 16vw, 72px) !important;
+		min-height:0;
+		margin:0 calc(clamp(12px, 4vw, 18px) * -1) !important;
+		padding:0;
+		background:#ABA9A5;
+		border-bottom:1px solid #D4A554;
+		overflow:hidden !important;
 		}
 
 	#logo img {
-		display:none;
+		display:block;
+		width:100%;
+		height:100%;
+		max-width:none;
+		object-fit:cover;
+		object-position:left center;
 		}
 
 	#logo:before {
-		content:"Goldmann";
-		display:inline;
-		font-family:"Lucida Calligraphy", "Brush Script MT", cursive;
-		font-size:28px;
-		line-height:1;
-		color:#D7A342;
-		text-shadow:0 1px 1px rgba(255,255,255,.55);
+		content:"";
+		display:none;
 		}
 
 	#logo:after {
-		content:"Footstools";
-		display:inline;
-		margin-left:10px;
-		font-family:Georgia, "Times New Roman", serif;
-		font-style:italic;
-		font-size:26px;
-		line-height:1;
-		color:#F2EFE9;
-		text-shadow:0 1px 2px rgba(0,0,0,.22);
+		content:"";
+		display:none;
 		}
 
-	#logo img,
 	#verlauf img,
 	#footer img,
 	#foto img,
@@ -951,33 +946,42 @@ body {
 		order:2;
 		display:flex;
 		flex-wrap:wrap;
-		gap:8px 14px;
+		gap:7px 8px;
 		justify-content:center;
-		padding:14px 0 18px;
+		padding:12px 0 14px;
 		border-bottom:1px solid #D9C49D;
 		}
 
 	#topmenu a {
 		margin-left:0;
-		padding:4px 0;
+		padding:5px 8px;
+		background:rgba(248, 245, 236, .72);
+		border:1px solid rgba(217, 196, 157, .72);
+		border-radius:4px;
 		}
 
 	#bildmenu {
 		order:3;
-		padding:18px 0 4px;
+		padding:12px 0 6px;
 		text-align:center;
 		}
 
 	#bildmenu .category-menu {
 		display:flex;
-		flex-wrap:wrap;
-		gap:14px 18px;
-		justify-content:center;
+		flex-wrap:nowrap;
+		gap:10px;
+		justify-content:flex-start;
+		padding:0 0 8px;
+		overflow-x:auto;
+		-webkit-overflow-scrolling:touch;
 		}
 
 	#bildmenu .category-link {
-		width:110px;
+		flex:0 0 88px;
+		width:88px;
 		margin-bottom:0;
+		font-size:13px;
+		line-height:1.15;
 		}
 
 	#bildmenu table {
@@ -986,6 +990,7 @@ body {
 
 	#bildmenu img {
 		border-radius:4px;
+		box-shadow:0 4px 10px rgba(82, 68, 47, .12);
 		}
 
 	#inhalt,
