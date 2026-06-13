@@ -484,9 +484,9 @@ body {
 
 .gallery-list td:first-child img {
 	display:block;
-	width:100%;
+	width:100% !important;
 	max-width:375px;
-	height:auto;
+	height:auto !important;
 	margin:0;
 	border-radius:4px;
 	box-shadow:0 10px 22px rgba(82, 68, 47, .14);
