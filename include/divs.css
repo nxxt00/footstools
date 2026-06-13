@@ -344,13 +344,14 @@ body {
 
 @media (min-width: 761px) {
 	#inhaltleft.detail-page {
-		width:820px;
+		width:800px;
+		overflow-x:hidden;
 		}
 
 	.detail-page {
 		display:grid;
-		grid-template-columns:minmax(0, 1fr) minmax(170px, 200px);
-		column-gap:22px;
+		grid-template-columns:minmax(0, 1fr) minmax(180px, 210px);
+		column-gap:16px;
 		row-gap:12px;
 		align-items:start;
 		}
