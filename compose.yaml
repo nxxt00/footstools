@@ -1,7 +1,17 @@
 services:
-  homepage:
-    build: .
-    image: footstools-homepage:latest
+  footstools-homepage:
+    image: ghcr.io/nxxt00/footstools:latest
+    container_name: footstools-homepage
     restart: unless-stopped
-    ports:
-      - "8080:80"
+    # Internal container port only. Do not publish host port 80;
+    # Nginx Proxy Manager already owns host ports 80/443.
+    expose:
+      - "80"
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    networks:
+      - nginx_default
+
+networks:
+  nginx_default:
+    external: true
