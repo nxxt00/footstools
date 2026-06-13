@@ -18,7 +18,7 @@ the VPS to this exact release line.
 
 ## Portainer Stack
 
-Use the included `compose.yaml` as a Portainer stack:
+Use the included `docker-compose.yml` or `compose.yaml` as a Portainer stack:
 
 ```yaml
 services:
@@ -48,6 +48,7 @@ docker network ls
 ```
 
 If your Nginx Proxy Manager network has a different name, update `compose.yaml`.
+If you use `docker-compose.yml` instead, update the same network name there too.
 
 Do not add a `ports:` mapping such as `80:80` or `8080:80` for this service.
 Nginx Proxy Manager is the only container that should publish host ports 80 and
@@ -94,13 +95,74 @@ GitHub Actions publishes one.
 
 ## Private GHCR Image
 
-If the GitHub repository/package is private, log in to GHCR on the VPS once:
+If the GitHub repository/package is private, the VPS must authenticate to GHCR.
+Do not put the token into `docker-compose.yml`.
+
+Create a GitHub Personal Access Token with package read access:
+
+```text
+read:packages
+```
+
+For a classic token, private repositories/packages may also require:
+
+```text
+repo
+```
+
+Then log in to GHCR on the VPS once:
 
 ```bash
 echo YOUR_GITHUB_PAT | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
 ```
 
-The token needs permission to read packages.
+Test the pull:
+
+```bash
+docker pull ghcr.io/nxxt00/footstools:latest
+```
+
+After that, Docker Compose can pull the private image:
+
+```bash
+docker compose pull
+docker compose up -d
+```
+
+### Portainer Registry Setup
+
+In Portainer, add a registry:
+
+```text
+Registries > Add registry
+Type: Custom registry
+Name: GitHub Container Registry
+Registry URL: ghcr.io
+Username: YOUR_GITHUB_USERNAME
+Password: YOUR_GITHUB_PAT
+```
+
+When deploying the stack, make sure Portainer uses those registry credentials.
+
+### Watchtower Auth For Private Images
+
+Watchtower also needs access to the GHCR credentials when it checks for updates.
+If you logged in as root on the VPS, add this volume to the Watchtower service:
+
+```yaml
+volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
+  - /root/.docker/config.json:/config.json:ro
+```
+
+If you logged in as another Linux user, mount that user's Docker config instead,
+for example:
+
+```yaml
+volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
+  - /home/ubuntu/.docker/config.json:/config.json:ro
+```
 
 ## Release Flow
 
