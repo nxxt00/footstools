@@ -198,9 +198,9 @@
     }
 
     function openLightbox(link) {
-      var row = closestElement(link, "tr");
-      var rowTitle = row ? row.querySelector(".product-title") : null;
-      var rowSpecs = row ? row.querySelector(".product-specs") : null;
+      var product = closestElement(link, ".product-card") || closestElement(link, "tr");
+      var rowTitle = product ? product.querySelector(".product-title") : null;
+      var rowSpecs = product ? product.querySelector(".product-specs") : null;
       var linkedImage = link.querySelector("img");
       var imageText = linkedImage ? linkedImage.getAttribute("alt") : "";
       var linkText = link.textContent.replace(/^\s+|\s+$/g, "");
